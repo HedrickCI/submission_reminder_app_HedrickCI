@@ -15,7 +15,7 @@ fi
 echo "Creating app root directory: $APP_DIR"
 mkdir "$APP_DIR"
 
-DIRS= ("config" "modules" "assets" "bin")
+DIRS=("config" "modules" "assets" "bin")
 for dir in "${DIRS[@]}"; do
 mkdir -p "${APP_DIR}/${dir}"
 done
@@ -104,6 +104,7 @@ find "${APP_DIR}" -name "*.sh" -exec chmod +x {} \;
 echo "Environment successfully created in: ./${APP_DIR}"
 echo "Run the application using: ./${APP_DIR}/startup.sh"
 echo "---------------------------------------------------"
+
 
 
 
