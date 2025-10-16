@@ -22,13 +22,13 @@ done
 
 echo "Simulating files ..."
 
-cat > "${APP_DIR}/config/config.env" ,, 'EOF'
+cat > "${APP_DIR}/config/config.env" << 'EOF'
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 
-cat > "${APP_DIR}/modules/functions.sh" ,, 'EOF'
+cat > "${APP_DIR}/modules/functions.sh" << 'EOF'
 #!/bin/bash
 
 # Function to read submissions file and output students who have not submitted
@@ -51,7 +51,7 @@ function check_submissions {
 }
 EOF
 
-cat > "${APP_DIR}/bin/reminder.sh" ,, 'EOF'
+cat > "${APP_DIR}/bin/reminder.sh" << 'EOF'
 #!/bin/bash
 
 
@@ -70,7 +70,7 @@ echo "--------------------------------------------"
 check_submissions "$submissions_file"
 EOF
 
-cat > "${APP_DIR}/data/submissions.txt" ,, 'EOF'
+cat > "${APP_DIR}/data/submissions.txt" << 'EOF'
 
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
@@ -79,7 +79,7 @@ Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
 EOF
 
-cat > "${APP_DIR}/startup.sh" ,, 'EOF'
+cat > "${APP_DIR}/startup.sh" << 'EOF'
 #!/bin/bash
 
 APP_ROOT=$(dirname "$0")
@@ -104,4 +104,5 @@ find "${APP_DIR}" -name "*.sh" -exec chmod +x {} \;
 echo "Environment successfully created in: ./${APP_DIR}"
 echo "Run the application using: ./${APP_DIR}/startup.sh"
 echo "---------------------------------------------------"
+
 
