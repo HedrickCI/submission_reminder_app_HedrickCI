@@ -44,7 +44,7 @@ function check_submissions {
         status=$(echo "$status" | xargs)
 
         # Check if assignment matches and status is 'not submitted'
-        if [[ "$assignment" == "$ASSIGNMENT" && "$status" != "not submitted" ]]; then
+        if [[ "$assignment" == "$ASSIGNMENT" && "$status" == "not submitted" ]]; then
             echo "Reminder: $student has not submitted the $ASSIGNMENT assignment!"
         fi
     done < <(tail -n +2 "$submissions_file") # Skip the header
@@ -104,3 +104,4 @@ find "${APP_DIR}" -name "*.sh" -exec chmod +x {} \;
 echo "Environment successfully created in: ./${APP_DIR}"
 echo "Run the application using: ./${APP_DIR}/startup.sh"
 echo "---------------------------------------------------"
+
