@@ -70,7 +70,7 @@ echo "--------------------------------------------"
 check_submissions "$submissions_file"
 EOF
 
-cat > "${APP_DIR}/data/submissions.txt" << 'EOF'
+cat > "${APP_DIR}/assets/submissions.txt" << 'EOF'
 
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
@@ -104,5 +104,6 @@ find "${APP_DIR}" -name "*.sh" -exec chmod +x {} \;
 echo "Environment successfully created in: ./${APP_DIR}"
 echo "Run the application using: ./${APP_DIR}/startup.sh"
 echo "---------------------------------------------------"
+
 
 
