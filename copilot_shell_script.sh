@@ -24,8 +24,7 @@ if [ -z "$NEW_ASSIGNMENT" ]; then
 fi
 
 
-sed -i "s|^ASSIGNMENT=\".*\"|ASSIGNMENT=\"${NEW_ASSIGNMENT}\"|" "$CONFIG_FILE"
-
+sed -i "s|^ASSIGNMENT=.*|ASSIGNMENT=\"${NEW_ASSIGNMENT}\"|" "$CONFIG_FILE"
 if [ $? -eq 0 ]; then
     echo "Successfully updated assignment name in $CONFIG_FILE."
     echo "New configuration line: $(grep 'ASSIGNMENT=' "$CONFIG_FILE")"
@@ -41,3 +40,4 @@ if [ $? -eq 0 ]; then
 else
     echo "Error: Failed to update config file using sed."
 fi
+
